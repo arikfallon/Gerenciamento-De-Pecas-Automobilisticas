@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mel Moto Peças | Login</title>
+    <link rel="stylesheet" href="./styles.css">
+</head>
+<body class="login-body">
+
+    <main class="login-page">
+        <section class="login-card">
+            <div class="login-logo">M</div>
+
+            <span class="eyebrow">MEL MOTO PEÇAS</span>
+            <h1>Gerenciador de Estoque</h1>
+            <p class="login-subtitle">Entre com seu usuário para acessar o estoque.</p>
+
+            <form id="loginForm">
+                <div class="input-group">
+                    <label for="loginUser">Usuário</label>
+                    <input id="loginUser" type="text" placeholder="Digite seu usuário" autocomplete="username" required>
+                </div>
+
+                <div class="input-group">
+                    <label for="loginPassword">Senha</label>
+                    <input id="loginPassword" type="password" placeholder="Digite sua senha" autocomplete="current-password" required>
+                </div>
+
+                <button class="button button-primary full-width" type="submit">
+                    Entrar
+                </button>
+            </form>
+
+            <div id="loginMessage" class="form-message"></div>
+
+            <details class="demo-access">
+                <summary>Acessos de demonstração</summary>
+                <p><strong>joao</strong> / 1234</p>
+                <p><strong>maria</strong> / 1234</p>
+            </details>
+        </section>
+    </main>
+
+    <script src="./login.js"></script>
+</body>
+</html>
