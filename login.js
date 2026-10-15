@@ -10,8 +10,7 @@ function getUsers() {
     // Usuários de demonstração.
     // Em um sistema real, usuários e senhas devem ficar no backend.
     const defaultUsers = [
-        { username: "joao", password: "1234", name: "João" },
-        { username: "maria", password: "1234", name: "Maria" }
+        { username: "priscila", password: "1234", name: "Priscila" },
     ];
 
     localStorage.setItem(USERS_KEY, JSON.stringify(defaultUsers));
