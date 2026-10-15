@@ -40,11 +40,11 @@ function loadProducts() {
     }
 
     // Cada usuário começa com seu próprio estoque.
-    const initial = loggedUsername === "joao"
+    const initial = loggedUsername === "priscila"
         ? [
             {
                 id: Date.now() + 1,
-                name: "Alavanca de embreagem",
+                name: "TesteProduto 1",
                 brand: "Honda",
                 model: "CG 125",
                 price: 52.98,
@@ -53,7 +53,7 @@ function loadProducts() {
             },
             {
                 id: Date.now() + 2,
-                name: "Aro roda traseira",
+                name: "TesteProduto 2",
                 brand: "Honda",
                 model: "Biz 100",
                 price: 100,
