@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mel Moto Peças | Gerenciamento de Estoque</title>
+    <link rel="stylesheet" href="./assets/css/styles.css">
+</head>
+
+<body>
+    <header class="topbar">
+  <div class="logo-area"><img class="logo-image" src="./assets/img/LogoMelMotoPeças.jpeg" alt="Logo oficial Mel Moto Peças"><div><h1>Mel Moto Peças</h1><span>Gerenciador de Estoque</span></div></div>
+  <nav><a href="./gerenciamento.html">Estoque</a><a href="./vendas.html">Vendas</a><a href="./perfil.html">Meu perfil</a></nav>
+  <div class="user-area"><span>Usuário: <strong id="currentUserName">-</strong></span><button id="logoutButton" class="logout-button">Sair</button></div>
+</header>
+
+    <main>
+        <section id="dashboard" class="page-section">
+            <div class="section-heading">
+                <div>
+                    <span class="eyebrow">CONTROLE DE ESTOQUE</span>
+                    <h2>Visão geral</h2>
+                    <p>Olá, <strong id="welcomeUser">-</strong>. Aqui estão os dados do seu estoque.</p>
+                </div>
+                <a class="button button-primary" href="#cadastro">+ Novo produto</a>
+            </div>
+
+            <div class="cards">
+                <article class="stat-card">
+                    <span class="stat-label">Produtos cadastrados</span>
+                    <strong id="totalProducts">0</strong>
+                    <span class="stat-description">itens no seu sistema</span>
+                </article>
+
+                <article class="stat-card">
+                    <span class="stat-label">Unidades em estoque</span>
+                    <strong id="totalStock">0</strong>
+                    <span class="stat-description">peças disponíveis</span>
+                </article>
+
+                <article class="stat-card warning-card">
+                    <span class="stat-label">Estoque baixo</span>
+                    <strong id="lowStock">0</strong>
+                    <span class="stat-description">5 unidades ou menos</span>
+                </article>
+
+                <article class="stat-card money-card">
+                    <span class="stat-label">Vendas de hoje</span>
+                    <strong id="todayRevenue">R$ 0,00</strong>
+                    <span class="stat-description">total vendido hoje</span>
+                </article>
+            </div>
+
+            <div class="content-card">
+                <div class="card-heading">
+                    <div>
+                        <h3>Produtos recentes</h3>
+                        <p>Os produtos do seu estoque aparecem aqui.</p>
+                    </div>
+                    <a href="#estoque" class="text-link">Ver estoque completo →</a>
+                </div>
+
+                <div class="table-wrapper">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Produto</th>
+                                <th>Marca</th>
+                                <th>Modelo</th>
+                                <th>Preço</th>
+                                <th>Quantidade</th>
+                            </tr>
+                        </thead>
+                        <tbody id="dashboardTable"></tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <section id="estoque" class="page-section">
+            <div class="section-heading">
+                <div>
+                    <span class="eyebrow">PRODUTOS</span>
+                    <h2>Meu estoque</h2>
+                </div>
+            </div>
+
+            <div class="content-card">
+                <div class="stock-toolbar">
+                    <div class="search-box">
+                        <span class="search-icon">⌕</span>
+                        <input type="search" id="searchInput" placeholder="Pesquisar por nome, marca ou modelo...">
+                    </div>
+
+                    <select id="stockFilter" aria-label="Filtrar estoque">
+                        <option value="all">Todos os produtos</option>
+                        <option value="low">Estoque baixo</option>
+                        <option value="out">Sem estoque</option>
+                    </select>
+                </div>
+
+                <div class="product-grid" id="productGrid"></div>
+            </div>
+        </section>
+
+        <section id="cadastro" class="page-section">
+            <div class="section-heading">
+                <div>
+                    <span class="eyebrow">NOVO CADASTRO</span>
+                    <h2>Cadastrar produto</h2>
+                    <p>Adicione uma nova peça ao seu estoque.</p>
+                </div>
+            </div>
+
+            <form id="productForm" class="form-card">
+                <fieldset>
+                    <legend>Informações do produto</legend>
+
+                    <div class="form-grid">
+                        <div class="input-group">
+                            <label for="productName">Nome do produto *</label>
+                            <input id="productName" type="text" placeholder="Ex.: Alavanca de embreagem" required>
+                        </div>
+
+                        <div class="input-group">
+                            <label for="productBrand">Marca *</label>
+                            <input id="productBrand" type="text" placeholder="Ex.: Honda" required>
+                        </div>
+
+                        <div class="input-group">
+                            <label for="productModel">Modelo *</label>
+                            <input id="productModel" type="text" placeholder="Ex.: CG 125" required>
+                        </div>
+
+                        <div class="input-group">
+                            <label for="productPrice">Preço *</label>
+                            <input id="productPrice" type="number" min="0" step="0.01" placeholder="0,00" required>
+                        </div>
+
+                        <div class="input-group">
+                            <label for="productQuantity">Quantidade inicial *</label>
+                            <input id="productQuantity" type="number" min="0" step="1" placeholder="Ex.: 10" required>
+                        </div>
+
+                        <div class="input-group">
+                            <label for="productImage">Imagem do produto</label>
+                            <input id="productImage" type="file" accept="image/*">
+
+                        </div>
+                    </div>
+
+                    <div id="imagePreviewBox" class="image-preview-box hidden">
+                        <img id="imagePreview" alt="Pré-visualização do produto">
+                    </div>
+                </fieldset>
+
+                <div class="form-actions">
+                    <button class="button button-primary" type="submit">Cadastrar produto</button>
+                    <button class="button button-secondary" type="reset">Limpar</button>
+                </div>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <strong>Mel Moto Peças</strong>
+        <span>•</span>
+        <span>Controle de Estoque</span>
+    </footer>
+
+    <!-- Modal de configuração do produto -->
+    <div id="configOverlay" class="modal-overlay hidden">
+        <div class="modal config-modal" role="dialog" aria-modal="true">
+            <button class="modal-close" id="closeConfig" aria-label="Fechar">×</button>
+
+            <div id="configContent"></div>
+        </div>
+    </div>
+
+    <!-- Modal de venda -->
+    <div id="saleOverlay" class="modal-overlay hidden modal-above">
+        <div class="modal sale-modal" role="dialog" aria-modal="true">
+            <button class="modal-close" id="closeSale" aria-label="Fechar">×</button>
+
+            <span class="eyebrow">REGISTRAR VENDA</span>
+            <h2>Produto vendido</h2>
+            <p id="saleProductName" class="modal-description"></p>
+
+            <div class="sale-info">
+                <span>Preço unitário</span>
+                <strong id="saleUnitPrice">R$ 0,00</strong>
+            </div>
+
+            <div class="input-group">
+                <label for="saleQuantity">Quantidade vendida</label>
+                <input id="saleQuantity" type="number" min="1" step="1" value="1">
+            </div>
+
+            <div class="sale-total-box">
+                <span>Total da venda</span>
+                <strong id="saleTotal">R$ 0,00</strong>
+            </div>
+
+            <div class="modal-actions">
+                <button class="button button-primary" id="confirmSale">Confirmar venda</button>
+                <button class="button button-secondary" id="cancelSale">Cancelar</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="./assets/js/ui.js"></script><script src="./assets/js/gerenciamento.js"></script>
+</body>
+</html>

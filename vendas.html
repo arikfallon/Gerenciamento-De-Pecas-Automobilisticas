@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mel Moto Peças | Vendas</title>
+  <link rel="stylesheet" href="./assets/css/styles.css">
+</head>
+
+<body>
+  <header class="topbar">
+    <div class="logo-area"><img class="logo-image" src="./assets/img/LogoMelMotoPeças.jpeg"
+        alt="Logo oficial Mel Moto Peças">
+      <div>
+        <h1>Mel Moto Peças</h1><span>Gerenciador de Estoque</span>
+      </div>
+    </div>
+    <nav><a href="./gerenciamento.html">Estoque</a><a href="./vendas.html">Vendas</a><a href="./perfil.html">Meu
+        perfil</a></nav>
+    <div class="user-area"><span>Usuário: <strong id="currentUserName">-</strong></span><button id="logoutButton"
+        class="logout-button">Sair</button></div>
+  </header>
+  <main>
+    <section class="page-section">
+      <div class="section-heading">
+        <div><span class="eyebrow">CONTROLE FINANCEIRO</span>
+          <h2>Vendas</h2>
+          <p>Acompanhe os registros de vendas por período.</p>
+        </div>
+      </div>
+      <div class="period-filters"><button class="period-button active" data-period="today">Hoje</button><button
+          class="period-button" data-period="week">Esta semana</button><button class="period-button"
+          data-period="month">Este mês</button><button class="period-button" data-period="all">Total</button></div>
+      <div class="finance-summary">
+        <article class="revenue-card"><span>Valor vendido no período</span><strong id="periodRevenue">R$ 0,00</strong>
+        </article>
+        <article class="revenue-card"><span>Peças vendidas</span><strong id="periodUnits">0</strong></article>
+        <article class="revenue-card"><span>Quantidade de vendas</span><strong id="periodCount">0</strong></article>
+      </div>
+      <div class="content-card">
+        <div class="card-heading">
+          <div>
+            <h3 id="salesHeading">Vendas de hoje</h3>
+            <p>Histórico armazenado localmente neste navegador.</p>
+          </div>
+        </div>
+        <div class="table-wrapper">
+          <table>
+            <thead>
+              <tr>
+                <th>Data / horário</th>
+                <th>Produto</th>
+                <th>Qtd.</th>
+                <th>Valor unitário</th>
+                <th>Total</th>
+              </tr>
+            </thead>
+            <tbody id="salesTable"></tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer><strong>Mel Moto Peças</strong><span>•</span><span>Controle de vendas</span></footer>
+  <script src="./assets/js/vendas.js"></script>
+</body>
+
+</html>

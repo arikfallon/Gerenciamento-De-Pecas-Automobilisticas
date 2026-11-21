@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mel Moto Peças | Meu perfil</title>
+  <link rel="stylesheet" href="./assets/css/styles.css">
+</head>
+
+<body>
+  <header class="topbar">
+    <div class="logo-area"><img class="logo-image" src="./assets/img/LogoMelMotoPeças.jpeg"
+        alt="Logo oficial Mel Moto Peças">
+      <div>
+        <h1>Mel Moto Peças</h1><span>Gerenciador de Estoque</span>
+      </div>
+    </div>
+    <nav><a href="./gerenciamento.html">Estoque</a><a href="./vendas.html">Vendas</a><a href="./perfil.html">Meu
+        perfil</a></nav>
+    <div class="user-area"><span>Usuário: <strong id="currentUserName">-</strong></span><button id="logoutButton"
+        class="logout-button">Sair</button></div>
+  </header>
+  <main>
+    <section class="page-section">
+      <div class="section-heading">
+        <div><span class="eyebrow">CONTA</span>
+          <h2>Meu perfil</h2>
+          <p>Atualize seus dados de acesso.</p>
+        </div>
+      </div>
+      <form id="profileForm" class="form-card">
+        <fieldset>
+          <legend>Dados do usuário</legend>
+          <div class="form-grid">
+            <div class="input-group"><label for="profileName">Nome</label><input id="profileName" required
+                maxlength="60"></div>
+            <div class="input-group"><label for="profileUsername">Usuário</label><input id="profileUsername" disabled>
+            </div>
+            <div class="input-group"><label for="profilePassword">Nova senha</label><input id="profilePassword"
+                type="password" minlength="4" placeholder="Deixe em branco para manter"></div>
+            <div class="input-group"><label for="profilePasswordConfirm">Confirmar nova senha</label><input
+                id="profilePasswordConfirm" type="password" minlength="4" placeholder="Repita a nova senha"></div>
+          </div>
+        </fieldset>
+        <div class="form-actions"><button class="button button-primary" type="submit">Salvar alterações</button></div>
+        <div id="profileMessage" class="form-message"></div>
+      </form>
+      <section class="profile-danger">
+        <h3>Excluir conta</h3>
+        <p>Esta ação remove a conta e os dados locais de produtos e vendas associados a este usuário neste navegador.
+          Não poderá ser desfeita.</p><button id="deleteAccount" class="button button-danger" type="button">Excluir
+          minha conta</button>
+      </section>
+    </section>
+  </main>
+  <footer><strong>Mel Moto Peças</strong><span>•</span><span>Perfil do usuário</span></footer>
+  <script src="./assets/js/ui.js"></script>
+  <script src="./assets/js/perfil.js"></script>
+</body>
+
+</html>

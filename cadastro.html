@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mel Moto Peças | Cadastro</title>
+    <link rel="stylesheet" href="./assets/css/styles.css">
+</head>
+
+<body class="login-body">
+    <main class="login-page">
+        <section class="login-card"><img class="login-logo-image" src="./assets/img/LogoMelMotoPeças.jpeg"
+                alt="Logo oficial Mel Moto Peças"><span class="eyebrow">MEL MOTO PEÇAS</span>
+            <h1>Criar conta</h1>
+            <p class="login-subtitle">Cadastre um usuário para acessar o sistema.</p>
+            <form id="registerForm">
+                <div class="input-group"><label for="registerName">Nome</label><input id="registerName" required
+                        maxlength="60" placeholder="Seu nome"></div>
+                <div class="input-group"><label for="registerUsername">Usuário</label><input id="registerUsername"
+                        required minlength="3" maxlength="24" placeholder="Escolha um usuário"></div>
+                <div class="input-group"><label for="registerPassword">Senha</label><input id="registerPassword"
+                        type="password" required minlength="4" placeholder="Mínimo de 4 caracteres"></div>
+                <div class="input-group"><label for="confirmPassword">Confirmar senha</label><input id="confirmPassword"
+                        type="password" required minlength="4" placeholder="Repita a senha"></div><button
+                    class="button button-primary full-width" type="submit">Cadastrar</button>
+            </form>
+            <div id="registerMessage" class="form-message"></div>
+            <p class="auth-links">Já possui conta? <a href="./login.html">Entrar</a></p>
+        </section>
+    </main>
+    <script src="./assets/js/cadastro.js"></script>
+</body>
+
+</html>
