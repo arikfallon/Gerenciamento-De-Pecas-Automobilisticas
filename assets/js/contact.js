@@ -1,4 +1,4 @@
-const EMAIL_DESTINO_CONTATO = "";
+const EMAIL_DESTINO_CONTATO = "email-do-proprietario@exemplo.com";
 const contactModal = document.querySelector("#contactModal");
 const openContact = () => {
     contactModal.classList.add("is-open");
